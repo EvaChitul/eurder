@@ -1,9 +1,8 @@
 package com.switchfully.eurder.domain;
 
+import com.switchfully.eurder.domain.elements.Customer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
@@ -43,23 +42,23 @@ class CustomerTest {
     }
 
     @Test
-    void whenGivenNullStreet_thenThrowIllegalArgumentException() {
+    void whenGivenNullAddress_thenThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", null, "12345"));
     }
 
     @Test
-    void whenGivenEmptyStreet_thenThrowIllegalArgumentException() {
+    void whenGivenEmptyAddress_thenThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "", "12345"));
     }
 
     @Test
     void whenGivenNullPhone_thenThrowIllegalArgumentException() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "", null));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "Java Street", null));
     }
 
     @Test
     void whenGivenEmptyPhone_thenThrowIllegalArgumentException() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "", ""));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "Java Street", ""));
     }
 
 }

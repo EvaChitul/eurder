@@ -1,10 +1,10 @@
 package com.switchfully.eurder.domain;
 
+import com.switchfully.eurder.domain.databases.CustomerDatabase;
+import com.switchfully.eurder.domain.elements.Customer;
+import com.switchfully.eurder.domain.repositories.CustomerRepository;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerRepositoryTest {
 

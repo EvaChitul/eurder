@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.switchfully.eurder.domain.CustomerRepositoryTest" time="0.121" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.switchfully.eurder.domain.UserTest" time="0.016" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
@@ -55,5 +55,16 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="whenAddingACustomer_theSizeOfTheRepositoryIncreasesBy1" classname="com.switchfully.eurder.domain.CustomerRepositoryTest" time="0.113"/>
+  <testcase name="whenGivenEmptyEmail_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0"/>
+  <testcase name="whenGivenNullFirstName_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0"/>
+  <testcase name="whenGivenEmptyLastName_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0"/>
+  <testcase name="whenGivenEmptyPhone_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0"/>
+  <testcase name="whenGivenNullEmail_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0"/>
+  <testcase name="whenGivenNullRolethenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.002"/>
+  <testcase name="whenGivenNullAddress_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.002"/>
+  <testcase name="whenGivenWrongEmailFormat_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.002"/>
+  <testcase name="whenGivenNullPhone_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.001"/>
+  <testcase name="whenGivenNullLastName_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.002"/>
+  <testcase name="whenGivenEmptyFirstName_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.001"/>
+  <testcase name="whenGivenEmptyAddress_thenThrowIllegalArgumentException" classname="com.switchfully.eurder.domain.UserTest" time="0.001"/>
 </testsuite>

@@ -1,5 +1,6 @@
-package com.switchfully.eurder.domain;
+package com.switchfully.eurder.domain.databases;
 
+import com.switchfully.eurder.domain.elements.Customer;
 import org.springframework.stereotype.Component;
 
 import java.util.*;

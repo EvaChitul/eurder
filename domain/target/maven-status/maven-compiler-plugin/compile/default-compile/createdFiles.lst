@@ -1,3 +1,7 @@
-com\switchfully\eurder\domain\CustomerRepository.class
-com\switchfully\eurder\domain\Customer.class
-com\switchfully\eurder\domain\CustomerDatabase.class
+com\switchfully\eurder\domain\repositories\UserRepository.class
+com\switchfully\eurder\domain\databases\UserDatabase.class
+com\switchfully\eurder\domain\elements\User.class
+com\switchfully\eurder\domain\databases\CustomerDatabase.class
+com\switchfully\eurder\domain\elements\Roles.class
+com\switchfully\eurder\domain\repositories\CustomerRepository.class
+com\switchfully\eurder\domain\elements\Customer.class

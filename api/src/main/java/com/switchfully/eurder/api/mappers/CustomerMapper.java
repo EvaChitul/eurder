@@ -2,7 +2,7 @@ package com.switchfully.eurder.api.mappers;
 
 import com.switchfully.eurder.api.dtos.CreateDtoCustomer;
 import com.switchfully.eurder.api.dtos.DtoCustomer;
-import com.switchfully.eurder.domain.Customer;
+import com.switchfully.eurder.domain.elements.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

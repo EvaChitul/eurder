@@ -1,7 +1,7 @@
 package com.switchfully.eurder.service;
 
-import com.switchfully.eurder.domain.Customer;
-import com.switchfully.eurder.domain.CustomerRepository;
+import com.switchfully.eurder.domain.elements.Customer;
+import com.switchfully.eurder.domain.repositories.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

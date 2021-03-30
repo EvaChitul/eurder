@@ -1,5 +1,7 @@
-package com.switchfully.eurder.domain;
+package com.switchfully.eurder.domain.repositories;
 
+import com.switchfully.eurder.domain.databases.CustomerDatabase;
+import com.switchfully.eurder.domain.elements.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

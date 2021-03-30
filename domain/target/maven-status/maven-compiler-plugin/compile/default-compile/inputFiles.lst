@@ -1,3 +1,7 @@
-C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\Customer.java
-C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\CustomerDatabase.java
-C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\CustomerRepository.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\elements\Roles.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\elements\Customer.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\databases\CustomerDatabase.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\databases\UserDatabase.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\repositories\CustomerRepository.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\elements\User.java
+C:\_development\eurder\domain\src\main\java\com\switchfully\eurder\domain\repositories\UserRepository.java
