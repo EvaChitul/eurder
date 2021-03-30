@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.UUID;
 
 @Component
 public class UserRepository {
@@ -23,5 +24,9 @@ public class UserRepository {
 
     public User createUser(User user) {
         return userDatabase.createUser(user);
+    }
+
+    public boolean isAdmin(UUID userId) {
+        return userDatabase.isAdmin(userId);
     }
 }

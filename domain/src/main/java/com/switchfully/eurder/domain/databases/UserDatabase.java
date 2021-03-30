@@ -1,5 +1,6 @@
 package com.switchfully.eurder.domain.databases;
 
+import com.switchfully.eurder.domain.elements.Roles;
 import com.switchfully.eurder.domain.elements.User;
 import org.springframework.stereotype.Component;
 
@@ -20,5 +21,9 @@ public class UserDatabase {
     public User createUser(User user){
         users.put(user.getId(), user);
         return users.get(user.getId());
+    }
+
+    public boolean isAdmin(UUID userId) {
+        return users.get(userId).getRole() == Roles.ADMIN;
     }
 }

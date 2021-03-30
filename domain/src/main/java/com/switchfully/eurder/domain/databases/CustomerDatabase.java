@@ -1,6 +1,7 @@
 package com.switchfully.eurder.domain.databases;
 
 import com.switchfully.eurder.domain.elements.Customer;
+import com.switchfully.eurder.domain.elements.User;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -17,4 +18,5 @@ public class CustomerDatabase {
         customers.put(customer.getId(), customer);
         return customers.get(customer.getId());
     }
+
 }
