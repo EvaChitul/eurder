@@ -1,0 +1,5 @@
+com\switchfully\eurder\api\dtos\CreateDtoCustomer.class
+com\switchfully\eurder\api\dtos\DtoCustomer.class
+com\switchfully\eurder\api\controllers\ExceptionHandlerController.class
+com\switchfully\eurder\api\controllers\CustomerController.class
+com\switchfully\eurder\api\mappers\CustomerMapper.class

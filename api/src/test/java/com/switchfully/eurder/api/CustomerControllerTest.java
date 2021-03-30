@@ -1,13 +1,14 @@
 package com.switchfully.eurder.api;
 
+import com.switchfully.eurder.api.controllers.CustomerController;
+import com.switchfully.eurder.api.dtos.CreateDtoCustomer;
+import com.switchfully.eurder.api.mappers.CustomerMapper;
 import com.switchfully.eurder.domain.CustomerDatabase;
 import com.switchfully.eurder.domain.CustomerRepository;
 import com.switchfully.eurder.service.CustomerService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerControllerTest {
 

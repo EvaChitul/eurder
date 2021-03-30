@@ -1,9 +1,13 @@
 package com.switchfully.eurder.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.UUID;
 
 public class Customer {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(Customer.class);
     private static final String EMAIL_FORMAT = "^\\w+@\\w+\\.\\w+$";
 
     private final UUID id;

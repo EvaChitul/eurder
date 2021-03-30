@@ -1,37 +1,48 @@
-package com.switchfully.eurder.api;
+package com.switchfully.eurder.api.dtos;
 
+import java.util.UUID;
 
-public class CreateDtoCustomer {
+public class DtoCustomer {
 
+    private UUID id;
     private String firstName;
     private String lastName;
     private String email;
     private String address;
     private String phone;
 
-    public CreateDtoCustomer setFirstName(String firstName){
+    public DtoCustomer setId(UUID id){
+        this.id = id;
+        return this;
+    }
+
+    public DtoCustomer setFirstName(String firstName){
         this.firstName = firstName;
         return this;
     }
 
-    public CreateDtoCustomer setLastName(String lastName){
+    public DtoCustomer setLastName(String lastName){
         this.lastName = lastName;
         return this;
     }
 
-    public CreateDtoCustomer setEmail(String email){
+    public DtoCustomer setEmail(String email){
         this.email = email;
         return this;
     }
 
-    public CreateDtoCustomer setAddress(String address){
+    public DtoCustomer setAddress(String address){
         this.address = address;
         return this;
     }
 
-    public CreateDtoCustomer setPhone (String phone){
+    public DtoCustomer setPhone (String phone){
         this.phone = phone;
         return this;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getFirstName() {
