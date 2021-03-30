@@ -61,4 +61,5 @@ class CustomerTest {
     void whenGivenEmptyPhone_thenThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Customer("Jeannie", "Nitro", "jeannienitro.io", "", ""));
     }
+
 }
