@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+
 @Component
 public class CustomerService {
 
@@ -21,6 +23,10 @@ public class CustomerService {
     public Customer createCustomer(Customer customer){
         LOGGER.info("Creating customer");
         return customerRepository.createCustomer(customer);
+    }
+
+    public Collection<Customer> getAllCustomers(){
+        return customerRepository.getAllCustomers();
     }
 
 }

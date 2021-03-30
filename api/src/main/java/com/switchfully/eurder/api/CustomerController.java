@@ -1,6 +1,5 @@
 package com.switchfully.eurder.api;
 
-import com.switchfully.eurder.domain.Customer;
 import com.switchfully.eurder.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping(path = "/customers")
@@ -32,5 +32,12 @@ public class CustomerController {
         LOGGER.info("Creating a customer");
         return customerMapper.changeCustomerToDtoCustomer(customerService.createCustomer(customerMapper.changeDtoConsumerToCustomer(customer)));
 
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<DtoCustomer> getAllCustomers(){
+        LOGGER.info("Getting all the customers");
+        return customerMapper.changeCollectionOfCustomersToListOfDtoCustomers(customerService.getAllCustomers());
     }
 }

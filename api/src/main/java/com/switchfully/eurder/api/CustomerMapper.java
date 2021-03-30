@@ -5,6 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CustomerMapper {
 
@@ -24,6 +28,11 @@ public class CustomerMapper {
     public Customer changeDtoConsumerToCustomer(CreateDtoCustomer dtoCustomer){
         LOGGER.info("Returning a Customer based on a DtoCustomer");
         return new Customer(dtoCustomer.getFirstName(), dtoCustomer.getLastName(), dtoCustomer.getEmail(), dtoCustomer.getAddress(), dtoCustomer.getPhone());
+    }
+
+    public List<DtoCustomer> changeCollectionOfCustomersToListOfDtoCustomers(Collection<Customer> customersToGet){
+        LOGGER.info("Returning all Customers in the form of DtoCustomers");
+        return customersToGet.stream().map(customer -> changeCustomerToDtoCustomer(customer)).collect(Collectors.toList());
     }
 
 
