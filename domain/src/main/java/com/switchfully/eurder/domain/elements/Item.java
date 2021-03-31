@@ -1,11 +1,14 @@
 package com.switchfully.eurder.domain.elements;
 
+import java.util.UUID;
+
 public class Item {
 
     private final String name;
     private final String description;
     private final double price;
     private final int stock;
+    private final UUID id;
 
     public Item(String name, String description, double price, int stock) {
         if (!validateItemInput(name, description, price, stock))
@@ -14,6 +17,7 @@ public class Item {
         this.description = description;
         this.price = price;
         this.stock = stock;
+        this.id = UUID.randomUUID();
     }
 
     public boolean validateItemInput(String name, String description, double price, int stock){
@@ -37,4 +41,11 @@ public class Item {
     public int getStock() {
         return stock;
     }
+
+    public UUID getId() {
+        return id;
+    }
+
+
+
 }
