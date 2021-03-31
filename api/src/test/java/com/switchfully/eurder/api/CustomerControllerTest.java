@@ -12,17 +12,13 @@ import org.junit.jupiter.api.Test;
 
 class CustomerControllerTest {
 
-    private CustomerDatabase customerDatabase;
     private CustomerController customerController;
     private CustomerMapper customerMapper;
-    private CustomerRepository customerRepository;
     private CustomerService customerService;
 
     @BeforeEach
     public void init(){
-        customerDatabase = new CustomerDatabase();
-        customerRepository = new CustomerRepository(customerDatabase);
-        customerService = new CustomerService(customerRepository);
+        customerService = new CustomerService(new CustomerRepository(new CustomerDatabase()));
         customerMapper = new CustomerMapper();
         customerController = new CustomerController(customerService, customerMapper);
     }
@@ -34,5 +30,7 @@ class CustomerControllerTest {
         Assertions.assertEquals(1, customerController.getAllCustomers().size());
 
     }
+
+
 
 }
