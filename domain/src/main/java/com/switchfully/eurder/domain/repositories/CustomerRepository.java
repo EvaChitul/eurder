@@ -27,4 +27,7 @@ public class CustomerRepository {
         return database.createCustomer(customer);
     }
 
+    public Customer getOneCustomer(UUID id) {
+        return database.getOneCustomer(id);
+    }
 }

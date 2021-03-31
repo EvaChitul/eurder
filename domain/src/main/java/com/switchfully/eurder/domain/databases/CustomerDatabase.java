@@ -19,4 +19,8 @@ public class CustomerDatabase {
         return customers.get(customer.getId());
     }
 
+    public Customer getOneCustomer(UUID id) {
+        if (!customers.containsKey(id)) throw new IllegalArgumentException("Cannot retrieve customer, invalid ID provided");
+        return customers.get(id);
+    }
 }

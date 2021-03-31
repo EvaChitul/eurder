@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -37,10 +38,19 @@ public class CustomerController {
 
     }
 
+    //COMMENT OUT BELOW ONCE FINALISED
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public List<DtoCustomer> getAllCustomers(){
         LOGGER.info("Getting all the customers");
         return customerMapper.changeCollectionOfCustomersToListOfDtoCustomers(customerService.getAllCustomers());
+    }
+
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public DtoCustomer getCustomerByID(@PathVariable("id") String id){
+        LOGGER.info("Getting one customer with UUID " + id);
+        return customerMapper.changeCustomerToDtoCustomer(customerService.getOneCustomer(UUID.fromString(id)));
     }
 }

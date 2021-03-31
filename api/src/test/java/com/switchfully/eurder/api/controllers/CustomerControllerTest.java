@@ -1,4 +1,4 @@
-package com.switchfully.eurder.api;
+package com.switchfully.eurder.api.controllers;
 
 import com.switchfully.eurder.api.controllers.CustomerController;
 import com.switchfully.eurder.api.dtos.CreateDtoCustomer;
@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 
 class CustomerControllerTest {
 
+    //COMMENT OUT BELOW ONCE FINALISED
+    
     private CustomerController customerController;
     private CustomerMapper customerMapper;
     private CustomerService customerService;

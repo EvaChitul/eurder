@@ -31,4 +31,6 @@ public class CustomerService {
         return customerRepository.getAllCustomers();
     }
 
+    public Customer getOneCustomer(UUID id) { return customerRepository.getOneCustomer(id);};
+
 }

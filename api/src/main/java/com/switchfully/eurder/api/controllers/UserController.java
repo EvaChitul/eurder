@@ -53,12 +53,21 @@ public class UserController {
         return userMapper.changeCollectionOfUsersToListOfDtoUsers(userService.getAllUsers());
     }
 
-    @GetMapping(path = "/consumers", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/customers", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public Collection<Customer> getAllCustomers(@RequestParam UUID userId){
         if(!userService.isAdmin(userId))
             throw new IllegalStateException("You do not have permission to access all customers. Permission reserved for ADMIN");
-        LOGGER.info("User with id " + userId +" requesting an overview of all the customers ");
+        LOGGER.info("User(admin) with ID " + userId +" requesting an overview of all the customers ");
         return customerService.getAllCustomers();
+    }
+
+    @GetMapping(path = "/customers/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public Customer getOneCustomerById(@PathVariable("id") String id, @RequestParam UUID userId){
+        if(!userService.isAdmin(userId))
+            throw new IllegalStateException("You do not have permission to access the customer. Permission reserved for ADMIN");
+        LOGGER.info("User(admin) with ID " + userId +" requesting an overview of customer with ID " + id);
+        return customerService.getOneCustomer(UUID.fromString(id));
     }
 }
