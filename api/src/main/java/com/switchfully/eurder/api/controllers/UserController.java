@@ -1,10 +1,15 @@
 package com.switchfully.eurder.api.controllers;
 
+import com.switchfully.eurder.api.dtos.items.CreateDtoItem;
+import com.switchfully.eurder.api.dtos.items.DtoItem;
 import com.switchfully.eurder.api.dtos.users.CreateDtoUser;
 import com.switchfully.eurder.api.dtos.users.DtoUser;
+import com.switchfully.eurder.api.mappers.ItemMapper;
 import com.switchfully.eurder.api.mappers.UserMapper;
 import com.switchfully.eurder.domain.elements.Customer;
+import com.switchfully.eurder.domain.elements.Item;
 import com.switchfully.eurder.service.CustomerService;
+import com.switchfully.eurder.service.ItemService;
 import com.switchfully.eurder.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,12 +31,16 @@ public class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
     private final CustomerService customerService;
+    private final ItemService itemService;
+    private final ItemMapper itemMapper;
 
     @Autowired
-    public UserController(UserService userService, UserMapper userMapper, CustomerService customerService) {
+    public UserController(UserService userService, UserMapper userMapper, CustomerService customerService, ItemService itemService, ItemMapper itemMapper) {
         this.userService = userService;
         this.userMapper = userMapper;
         this.customerService = customerService;
+        this.itemService = itemService;
+        this.itemMapper = itemMapper;
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,5 +73,14 @@ public class UserController {
             throw new IllegalStateException("You do not have permission to access the customer. Permission reserved for ADMIN");
         LOGGER.info("User(admin) with ID " + userId +" requesting an overview of customer with ID " + id);
         return customerService.getOneCustomer(UUID.fromString(id));
+    }
+
+    @PostMapping(path = "/items", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Item addItem(@RequestParam UUID userId, @RequestBody CreateDtoItem itemToAdd){
+        if(!userService.isAdmin(userId))
+            throw new IllegalStateException("You do not have permission to add an Item. Permission reserved for ADMIN");
+        LOGGER.info("User(admin) with ID " + userId +" added a new item with name " + itemToAdd.getName());
+        return itemService.addItem(itemMapper.changeDtoItemToItem(itemToAdd));
     }
 }
