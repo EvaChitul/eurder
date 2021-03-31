@@ -1,5 +1,6 @@
 package com.switchfully.eurder.domain.elements;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Customer {
@@ -53,5 +54,18 @@ public class Customer {
 
     public UUID getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(email, customer.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email);
     }
 }

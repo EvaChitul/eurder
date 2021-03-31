@@ -25,14 +25,6 @@ public class ItemDatabase {
         return items.get(item.getId());
     }
 
-//    private Item increaseStockForItem(Item item) {
-//        return items.put(item.getId(), new Item(item.getName(), item.getDescription(), item.getPrice(), (item.getStock()) + INCREASE_STOCK_NUMBER));
-//    }
-
-//    private Item increaseStockForItem(Item item) {
-//        return items.put(item.getId(), new Item(item.getName(), item.getDescription(), item.getPrice(), (item.getStock()) + items.get(item.getId()).getStock()));
-//    }
-
     private boolean itemAlreadyInDatabase(Item item) {
         return items.containsValue(item);
     }

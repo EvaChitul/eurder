@@ -19,8 +19,13 @@ public class UserDatabase {
     }
 
     public User createUser(User user){
+        if(userAlreadyInDatabase(user)) throw new IllegalArgumentException("User with email " + user.getEmail() + " already registered");
         users.put(user.getId(), user);
         return users.get(user.getId());
+    }
+
+    private boolean userAlreadyInDatabase(User user) {
+        return users.containsValue(user);
     }
 
     public boolean isAdmin(UUID userId) {

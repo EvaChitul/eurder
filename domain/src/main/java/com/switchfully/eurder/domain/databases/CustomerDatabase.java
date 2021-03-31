@@ -15,8 +15,13 @@ public class CustomerDatabase {
         return customers.values();};
 
     public Customer createCustomer(Customer customer){
+        if(customerAlreadyInDatabase(customer)) throw new IllegalArgumentException("Customer with email " + customer.getEmail() + " already registered");
         customers.put(customer.getId(), customer);
         return customers.get(customer.getId());
+    }
+
+    private boolean customerAlreadyInDatabase(Customer customer) {
+        return customers.containsValue(customer);
     }
 
     public Customer getOneCustomer(UUID id) {
