@@ -15,7 +15,7 @@ public class Customer {
 
     public Customer(String firstName, String lastName, String email, String address, String phone) {
         if (!validateCustomerInput(firstName, lastName, email, address, phone))
-            throw new IllegalArgumentException("Cannot create customer, illegal input provided");
+            throw new IllegalArgumentException("Cannot create customer, invalid input provided");
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
