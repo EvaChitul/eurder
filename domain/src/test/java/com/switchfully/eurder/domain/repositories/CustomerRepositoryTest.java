@@ -1,4 +1,4 @@
-package com.switchfully.eurder.domain;
+package com.switchfully.eurder.domain.repositories;
 
 import com.switchfully.eurder.domain.databases.CustomerDatabase;
 import com.switchfully.eurder.domain.elements.Customer;

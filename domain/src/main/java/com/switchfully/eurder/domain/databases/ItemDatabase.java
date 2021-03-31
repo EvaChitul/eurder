@@ -20,16 +20,20 @@ public class ItemDatabase {
     }
 
     public Item addItem(Item item){
-        if (itemAlreadyInDatabase(item)) increaseStockForItem(item);
-        else items.put(item.getId(), item);
+        if (itemAlreadyInDatabase(item)) throw new IllegalArgumentException("Item with ID" + item.getId() + "already in system. Cannot add again");
+        items.put(item.getId(), item);
         return items.get(item.getId());
     }
 
-    private Item increaseStockForItem(Item item) {
-        return items.put(item.getId(), new Item(item.getName(), item.getDescription(), item.getPrice(), (item.getStock()) + INCREASE_STOCK_NUMBER));
-    }
+//    private Item increaseStockForItem(Item item) {
+//        return items.put(item.getId(), new Item(item.getName(), item.getDescription(), item.getPrice(), (item.getStock()) + INCREASE_STOCK_NUMBER));
+//    }
+
+//    private Item increaseStockForItem(Item item) {
+//        return items.put(item.getId(), new Item(item.getName(), item.getDescription(), item.getPrice(), (item.getStock()) + items.get(item.getId()).getStock()));
+//    }
 
     private boolean itemAlreadyInDatabase(Item item) {
-        return items.containsKey(item.getId());
+        return items.containsValue(item);
     }
 }
