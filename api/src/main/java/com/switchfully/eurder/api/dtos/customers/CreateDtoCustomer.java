@@ -1,4 +1,4 @@
-package com.switchfully.eurder.api.dtos;
+package com.switchfully.eurder.api.dtos.customers;
 
 
 public class CreateDtoCustomer {

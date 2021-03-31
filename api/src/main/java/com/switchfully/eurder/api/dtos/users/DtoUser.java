@@ -1,4 +1,4 @@
-package com.switchfully.eurder.api.dtos;
+package com.switchfully.eurder.api.dtos.users;
 
 import com.switchfully.eurder.domain.elements.Roles;
 

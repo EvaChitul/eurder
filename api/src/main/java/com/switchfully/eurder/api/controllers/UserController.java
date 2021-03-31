@@ -1,14 +1,9 @@
 package com.switchfully.eurder.api.controllers;
 
-import com.switchfully.eurder.api.dtos.CreatedDtoUser;
-import com.switchfully.eurder.api.dtos.DtoCustomer;
-import com.switchfully.eurder.api.dtos.DtoUser;
-import com.switchfully.eurder.api.mappers.CustomerMapper;
+import com.switchfully.eurder.api.dtos.users.CreateDtoUser;
+import com.switchfully.eurder.api.dtos.users.DtoUser;
 import com.switchfully.eurder.api.mappers.UserMapper;
-import com.switchfully.eurder.domain.databases.CustomerDatabase;
 import com.switchfully.eurder.domain.elements.Customer;
-import com.switchfully.eurder.domain.elements.User;
-import com.switchfully.eurder.domain.repositories.CustomerRepository;
 import com.switchfully.eurder.service.CustomerService;
 import com.switchfully.eurder.service.UserService;
 import org.slf4j.Logger;
@@ -41,7 +36,7 @@ public class UserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoUser createUser(@RequestBody CreatedDtoUser createdDtoUser){
+    public DtoUser createUser(@RequestBody CreateDtoUser createdDtoUser){
         LOGGER.info("Creating a user");
         return userMapper.changeUserToDtoUser(userService.createUser(userMapper.changeDtoUserToUser(createdDtoUser)));
     }

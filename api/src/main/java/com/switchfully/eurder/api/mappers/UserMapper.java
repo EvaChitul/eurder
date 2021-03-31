@@ -1,8 +1,7 @@
 package com.switchfully.eurder.api.mappers;
 
-import com.switchfully.eurder.api.dtos.CreatedDtoUser;
-import com.switchfully.eurder.api.dtos.DtoCustomer;
-import com.switchfully.eurder.api.dtos.DtoUser;
+import com.switchfully.eurder.api.dtos.users.CreateDtoUser;
+import com.switchfully.eurder.api.dtos.users.DtoUser;
 import com.switchfully.eurder.domain.elements.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +26,7 @@ public class UserMapper {
                 setRole(user.getRole());
     }
 
-    public User changeDtoUserToUser(CreatedDtoUser createdDtoUser){
+    public User changeDtoUserToUser(CreateDtoUser createdDtoUser){
         LOGGER.info("Returning a User based on a DtoUser");
         return new User(createdDtoUser.getFirstName(), createdDtoUser.getLastName(), createdDtoUser.getEmail(), createdDtoUser.getRole());
     }

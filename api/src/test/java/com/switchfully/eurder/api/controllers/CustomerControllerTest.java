@@ -1,7 +1,6 @@
 package com.switchfully.eurder.api.controllers;
 
-import com.switchfully.eurder.api.controllers.CustomerController;
-import com.switchfully.eurder.api.dtos.CreateDtoCustomer;
+import com.switchfully.eurder.api.dtos.customers.CreateDtoCustomer;
 import com.switchfully.eurder.api.mappers.CustomerMapper;
 import com.switchfully.eurder.domain.databases.CustomerDatabase;
 import com.switchfully.eurder.domain.repositories.CustomerRepository;

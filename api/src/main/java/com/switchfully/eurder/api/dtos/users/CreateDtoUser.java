@@ -1,30 +1,30 @@
-package com.switchfully.eurder.api.dtos;
+package com.switchfully.eurder.api.dtos.users;
 
 import com.switchfully.eurder.domain.elements.Roles;
 
-public class CreatedDtoUser {
+public class CreateDtoUser {
 
     private String firstName;
     private String lastName;
     private String email;
     private Roles role;
 
-    public CreatedDtoUser setFirstName(String firstName){
+    public CreateDtoUser setFirstName(String firstName){
         this.firstName = firstName;
         return this;
     }
 
-    public CreatedDtoUser setLastName(String lastName){
+    public CreateDtoUser setLastName(String lastName){
         this.lastName = lastName;
         return this;
     }
 
-    public CreatedDtoUser setEmail(String email){
+    public CreateDtoUser setEmail(String email){
         this.email = email;
         return this;
     }
 
-    public CreatedDtoUser setRole(Roles role){
+    public CreateDtoUser setRole(Roles role){
         this.role = role;
         return this;
     }

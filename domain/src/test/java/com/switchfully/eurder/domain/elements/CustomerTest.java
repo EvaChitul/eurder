@@ -1,4 +1,4 @@
-package com.switchfully.eurder.domain;
+package com.switchfully.eurder.domain.elements;
 
 import com.switchfully.eurder.domain.elements.Customer;
 import org.junit.jupiter.api.Assertions;
