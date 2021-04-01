@@ -4,15 +4,24 @@ import java.util.*;
 
 public class Order {
 
-    private final List<ItemGroup> order = new ArrayList<>();
+    private final UUID id;
+    private final List<ItemGroup> orderItems;
 
-    public List<ItemGroup> getOrder() {
-        return order;
+    public Order() {
+        this.id = UUID.randomUUID();
+        this.orderItems = new ArrayList<>();
     }
 
-    public List<ItemGroup> addItemToOrder(ItemGroup itemGroup) {
-        order.add(itemGroup);
-        return order;
+    public Order addItemGroupToOrder(ItemGroup itemGroup){
+        this.orderItems.add(itemGroup);
+        return this;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public List<ItemGroup> getOrderItems() {
+        return orderItems;
+    }
 }

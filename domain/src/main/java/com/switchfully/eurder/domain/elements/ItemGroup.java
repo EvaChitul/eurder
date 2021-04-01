@@ -7,6 +7,8 @@ import java.util.UUID;
 
 public class ItemGroup {
 
+    // Add price?
+
     private final UUID itemId;
     private int amount;
     private final int shippingDate;

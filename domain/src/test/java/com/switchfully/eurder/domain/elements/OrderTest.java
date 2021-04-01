@@ -13,25 +13,25 @@ class OrderTest {
 
     @Test
     void whenAddingAnItemGroupToAnOrder_thenSizeOfOrderIncreasesBy1(){
-        List<ItemGroup> order = new ArrayList<>();
-        order.add(new ItemGroup(UUID.randomUUID(), 2, 4));
-        Assertions.assertEquals(1, order.size());
+        Order order = new Order();
+        order.getOrderItems().add(new ItemGroup(UUID.randomUUID(), 2, 4));
+        Assertions.assertEquals(1, order.getOrderItems().size());
     }
 
     @Test
     void whenAddingAnInvalidItemGroupToAnOrder_thenThrowIllegalArgumentException(){
-        List<ItemGroup> order = new ArrayList<>();
-        Assertions.assertThrows(IllegalArgumentException.class, () -> order.add(new ItemGroup(UUID.randomUUID(), -10, 4)));
+        Order order = new Order();
+        Assertions.assertThrows(IllegalArgumentException.class, () ->  order.getOrderItems().add(new ItemGroup(UUID.randomUUID(), -10, 4)));
     }
 
     @Test
     void whenAddingAnInvalidItemGroupToAnOrder_thenSizeOfOrderDoesNotIncrease(){
-        List<ItemGroup> order = new ArrayList<>();
+        Order order = new Order();
         try {
-            order.add(new ItemGroup(UUID.randomUUID(), -10, 4));
+            order.getOrderItems().add(new ItemGroup(UUID.randomUUID(), -10, 4));
         } catch (IllegalArgumentException exception){}
 
-        Assertions.assertEquals(0, order.size());
+        Assertions.assertEquals(0, order.getOrderItems().size());
     }
 
 }

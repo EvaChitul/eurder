@@ -3,10 +3,7 @@ package com.switchfully.eurder.domain.databases;
 import com.switchfully.eurder.domain.elements.Order;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Component
 public class OrderDatabase {
@@ -25,4 +22,6 @@ public class OrderDatabase {
         orders.get(customerID).add(order);
         return orders.get(customerID);
     }
+
+
 }
