@@ -1,7 +1,6 @@
 package com.switchfully.eurder.api.controllers;
 
 import com.switchfully.eurder.api.dtos.items.CreateDtoItem;
-import com.switchfully.eurder.api.dtos.items.DtoItem;
 import com.switchfully.eurder.api.dtos.users.CreateDtoUser;
 import com.switchfully.eurder.api.dtos.users.DtoUser;
 import com.switchfully.eurder.api.mappers.ItemMapper;

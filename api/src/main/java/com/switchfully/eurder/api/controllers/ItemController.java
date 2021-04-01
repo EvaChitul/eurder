@@ -27,6 +27,8 @@ public class ItemController {
         this.itemMapper = itemMapper;
     }
 
+    //COMMENT OUT BELOW ONCE FINALISED
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public DtoItem addItem(@RequestBody CreateDtoItem item){

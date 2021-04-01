@@ -29,9 +29,6 @@ class CustomerControllerTest {
         CreateDtoCustomer customerTest = new CreateDtoCustomer().setFirstName("Jeannie").setLastName("Nitro").setEmail("jeannie@nitro.io").setAddress("Here").setPhone("12345");
         customerMapper.changeCustomerToDtoCustomer(customerService.createCustomer(customerMapper.changeDtoConsumerToCustomer(customerTest)));
         Assertions.assertEquals(1, customerController.getAllCustomers().size());
-
     }
-
-
 
 }
