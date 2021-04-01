@@ -1,12 +1,14 @@
 package com.switchfully.eurder.domain.databases;
 
 import com.switchfully.eurder.domain.elements.Order;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+@Component
 public class OrderDatabase {
 
     private final Map<UUID, List<Order>> orders = new HashMap<>();
