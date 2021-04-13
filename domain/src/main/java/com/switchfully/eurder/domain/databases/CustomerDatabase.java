@@ -28,4 +28,8 @@ public class CustomerDatabase {
         if (!customers.containsKey(id)) throw new IllegalArgumentException("Cannot retrieve customer, invalid ID provided");
         return customers.get(id);
     }
+
+    public boolean isCustomer(UUID customerID) {
+        return customers.containsKey(customerID);
+    }
 }

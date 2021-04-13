@@ -28,4 +28,8 @@ public class CustomerService {
 
     public Customer getOneCustomer(UUID id) { return customerRepository.getOneCustomer(id);};
 
+    public boolean isCustomer(UUID customerID) {
+        return customerRepository.isCustomer(customerID);
+    }
+
 }

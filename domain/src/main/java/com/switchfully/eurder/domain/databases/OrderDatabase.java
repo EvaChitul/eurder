@@ -14,14 +14,18 @@ public class OrderDatabase {
         return orders;
     }
 
+    public Order addOrderForCustomer(UUID customerID, Order order){
+        if (orders.get(customerID) == null) { orders.put(customerID, new ArrayList<>());
+        }
+        orders.get(customerID).add(order);
+        return orders.get(customerID).stream().filter(oneOrder -> oneOrder.getId() == order.getId()).findAny().get();
+    }
+
+    public Order getOneOrderForCustomer(UUID customerID, UUID orderID) {
+        return orders.get(customerID).stream().filter(order -> order.getId() == orderID).findAny().get();
+    }
+
     public List<Order> getAllOrdersForOneCustomer(UUID customerId){
         return orders.get(customerId);
     }
-
-    public List<Order> addOrderForCustomer(UUID customerID, Order order){
-        orders.get(customerID).add(order);
-        return orders.get(customerID);
-    }
-
-
 }

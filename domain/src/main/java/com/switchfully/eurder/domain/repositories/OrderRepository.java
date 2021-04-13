@@ -21,8 +21,12 @@ public class OrderRepository {
 
     public Map<UUID, List<Order>> getAllOrders(){ return orderDatabase.getAllOrders();}
 
-    public List<Order> addOrderForCustomer(UUID customerId, Order order){
+    public Order addOrderForCustomer(UUID customerId, Order order){
         return orderDatabase.addOrderForCustomer(customerId, order);
+    }
+
+    public Order getOneOrderForCustomer(UUID customerID, UUID orderID) {
+        return orderDatabase.getOneOrderForCustomer(customerID, orderID);
     }
 
     public List<Order> getAllOrdersForCustomer(UUID customerID){

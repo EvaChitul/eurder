@@ -30,4 +30,8 @@ public class CustomerRepository {
     public Customer getOneCustomer(UUID id) {
         return database.getOneCustomer(id);
     }
+
+    public boolean isCustomer(UUID customerID) {
+        return database.isCustomer(customerID);
+    }
 }

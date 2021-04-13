@@ -7,7 +7,7 @@ public class Order {
     private final UUID id;
     private final List<ItemGroup> orderItems;
 
-    public Order() {
+    public Order(List<ItemGroup> orderItems) {
         this.id = UUID.randomUUID();
         this.orderItems = new ArrayList<>();
     }

@@ -7,23 +7,16 @@ import java.util.UUID;
 
 public class ItemGroup {
 
-    // Add price?
+    // Add price - retrieve from item by id?
 
     private final UUID itemId;
-    private int amount;
+    private final int amount;
     private final int shippingDate;
 
     public ItemGroup(UUID itemId, int amount, int shippingDate) {
-        if(!validateInput(itemId, amount)) throw new IllegalArgumentException("Cannot create ItemGroup with given parameters");
         this.itemId = itemId;
         this.amount = amount;
         this.shippingDate = shippingDate;
-    }
-
-    // Validation of ItemId done before? TBC
-
-    private boolean validateInput(UUID itemId, int amount) {
-        return itemId != null && !itemId.toString().equals("") && !itemId.toString().equals(" ") && amount > 0;
     }
 
     public UUID getItemId() {
@@ -38,10 +31,6 @@ public class ItemGroup {
         return shippingDate;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,6 +43,5 @@ public class ItemGroup {
     public int hashCode() {
         return Objects.hash(itemId);
     }
-
 
 }
